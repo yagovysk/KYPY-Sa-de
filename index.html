@@ -66,6 +66,16 @@
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "08:00",
           "closes": "18:00"
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            "name": "Kypy Saúde",
+            ...
+            "employee": {
+              "@type": "Person",
+              "name": "Dr. Pedro Célio",
+              "jobTitle": "Médico Clínico Geral"
         }
       }
     </script>
@@ -102,14 +112,20 @@
     <main id="main-content">
       <section class="home" id="home" aria-labelledby="home-title">
         <div class="container-home scroll-reveal">
-          <img
-            class="perfil scroll-reveal"
-            src="./assets/perfil-doutor.webp"
-            alt="Médico sorridente com jaleco branco, representando atendimento humanizado"
-            width="400"
-            height="400"
-            loading="lazy"
-          />
+          <div>
+            <img
+              class="perfil scroll-reveal"
+              src="./assets/perfil-doutor.webp"
+              alt="Médico sorridente com jaleco branco, representando atendimento humanizado"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+            <p class="perfil-paragraph scroll-reveal">
+              Médico da equipe <strong>Dr. Pedro Célio</strong>
+            </p>
+          </div>
+
           <article class="container-texts">
             <h1 class="home-title scroll-reveal">
               Cuidar da sua saúde é a nossa prioridade
@@ -121,7 +137,7 @@
               especialidades para garantir diagnósticos precisos, tratamentos
               eficazes e bem-estar contínuo.
             </p>
-            <a class="home-button scroll-reveal" href="#contact" role="button"
+            <a class="home-button" href="#contact" role="button"
               >Agende sua consulta!</a
             >
           </article>

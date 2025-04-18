@@ -127,6 +127,11 @@ body {
   border-radius: 10px;
 }
 
+.perfil-paragraph {
+  font-family: "Roboto slab", sans-serif;
+  color: #fff;
+}
+
 .container-texts {
   display: flex;
   flex-direction: column;
