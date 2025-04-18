@@ -3,6 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Clínica médica com excelência em saúde, atendimento humanizado e profissionais qualificados. Agende sua consulta na Kypy Saúde."
+    />
+    <meta name="author" content="Kypy Saúde" />
+
+    <!-- SEO Social -->
+    <meta
+      property="og:title"
+      content="Kypy Saúde - Excelência em Atendimento Médico"
+    />
+    <meta
+      property="og:description"
+      content="Atendimento médico humanizado e especializado. Agende sua consulta conosco."
+    />
+    <meta
+      property="og:image"
+      content="https://kypysaude.netlify.app/assets/kypy-logo.webp"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kypysaude.netlify.app/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
     <link
       rel="shortcut icon"
       href="./assets/kypy-logo.webp"
@@ -15,14 +38,28 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
-    <title>Kypy Saúde - Serviços médicos</title>
+    <title>Kypy Saúde - Excelência em Atendimento Médico</title>
   </head>
+
   <body>
-    <header class="navbar">
-      <div class="logo"><img src="./assets/kypy-logo.webp" alt="" /></div>
-      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
-      <nav class="menu-container" id="menu-container">
-        <button class="menu-close" id="close-menu" aria-label="Fechar menu">✕</button>
+    <header class="navbar" role="banner">
+      <div class="logo">
+        <a href="#home" aria-label="Ir para início">
+          <img src="./assets/kypy-logo.webp" alt="Logo da clínica Kypy Saúde" />
+        </a>
+      </div>
+      <button class="menu-toggle" aria-label="Abrir menu de navegação">
+        ☰
+      </button>
+      <nav
+        class="menu-container"
+        id="menu-container"
+        role="navigation"
+        aria-label="Menu principal"
+      >
+        <button class="menu-close" id="close-menu" aria-label="Fechar menu">
+          ✕
+        </button>
         <ul class="menu">
           <li><a href="#home">Início</a></li>
           <li><a href="#services">Serviços</a></li>
@@ -31,25 +68,60 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <section class="home" id="home">
+
+    <main id="main-content">
+      <section class="home" id="home" aria-labelledby="home-title">
         <div class="container-home">
-          <img class="perfil" src="./assets/perfil-doutor.webp" alt="" />
+          <img
+            class="perfil"
+            src="./assets/perfil-doutor.webp"
+            alt="Médico sorridente com jaleco branco, representando atendimento humanizado"
+            width="400"
+            height="400"
+            loading="lazy"
+          />
           <article class="container-texts">
-            <h1 class="home-title">Cuidar da sua saúde é a nossa prioridade</h1>
+            <h1 id="home-title">Cuidar da sua saúde é a nossa prioridade</h1>
             <p class="home-paragraph">
               Na Kypy Saúde, unimos excelência médica, atendimento humanizado e
               estrutura moderna para oferecer a você e à sua família o cuidado
-              que merecem. <br />
-              Atuamos com profissionais qualificados em diversas especialidades
-              para garantir diagnósticos precisos, tratamentos eficazes e
-              bem-estar contínuo.
+              que merecem. Atuamos com profissionais qualificados em diversas
+              especialidades para garantir diagnósticos precisos, tratamentos
+              eficazes e bem-estar contínuo.
             </p>
-            <a class="home-button" href="">Agende sua consulta!</a>
+            <a class="home-button" href="#contact" role="button"
+              >Agende sua consulta!</a
+            >
           </article>
         </div>
       </section>
+
+      <section class="services" id="services" aria-labelledby="services-title">
+        <h2 id="services-title">Serviços</h2>
+        <p>
+          Conheça as especialidades médicas que oferecemos para cuidar da sua
+          saúde.
+        </p>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">Sobre Nós</h2>
+        <p>Saiba mais sobre a nossa missão, visão e valores.</p>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contato</h2>
+        <p>
+          Entre em contato conosco para mais informações ou para agendar sua
+          consulta.
+        </p>
+      </section>
     </main>
-    <script src="./scripts.js"></script>
+
+    <footer role="contentinfo">
+      <p>&copy; 2025 Kypy Saúde. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./scripts.js" defer></script>
   </body>
 </html>
