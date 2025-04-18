@@ -39,6 +39,36 @@
     />
     <link rel="stylesheet" href="./styles.css" />
     <title>Kypy Saúde - Excelência em Atendimento Médico</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalClinic",
+        "name": "Kypy Saúde",
+        "image": "https://kypysaude.netlify.app/assets/kypy-logo.webp",
+        "url": "https://kypysaude.netlify.app/",
+        "logo": "https://kypysaude.netlify.app/assets/kypy-logo.webp",
+        "description": "Clínica médica com atendimento humanizado e profissionais qualificados. Especialidades médicas para sua saúde e bem-estar.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Sua Cidade",
+          "addressRegion": "Seu Estado",
+          "addressCountry": "BR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+55-xx-xxxx-xxxx",
+          "contactType": "customer service",
+          "areaServed": "BR",
+          "availableLanguage": ["Portuguese"]
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      }
+    </script>
   </head>
 
   <body>
@@ -71,9 +101,9 @@
 
     <main id="main-content">
       <section class="home" id="home" aria-labelledby="home-title">
-        <div class="container-home">
+        <div class="container-home scroll-reveal">
           <img
-            class="perfil"
+            class="perfil scroll-reveal"
             src="./assets/perfil-doutor.webp"
             alt="Médico sorridente com jaleco branco, representando atendimento humanizado"
             width="400"
@@ -81,22 +111,28 @@
             loading="lazy"
           />
           <article class="container-texts">
-            <h1 id="home-title">Cuidar da sua saúde é a nossa prioridade</h1>
-            <p class="home-paragraph">
+            <h1 class="home-title scroll-reveal">
+              Cuidar da sua saúde é a nossa prioridade
+            </h1>
+            <p class="home-paragraph scroll-reveal">
               Na Kypy Saúde, unimos excelência médica, atendimento humanizado e
               estrutura moderna para oferecer a você e à sua família o cuidado
               que merecem. Atuamos com profissionais qualificados em diversas
               especialidades para garantir diagnósticos precisos, tratamentos
               eficazes e bem-estar contínuo.
             </p>
-            <a class="home-button" href="#contact" role="button"
+            <a class="home-button scroll-reveal" href="#contact" role="button"
               >Agende sua consulta!</a
             >
           </article>
         </div>
       </section>
 
-      <section class="services" id="services" aria-labelledby="services-title">
+      <section
+        class="services scroll-reveal"
+        id="services"
+        aria-labelledby="services-title"
+      >
         <h2 id="services-title">Serviços</h2>
         <p>
           Conheça as especialidades médicas que oferecemos para cuidar da sua
@@ -104,12 +140,20 @@
         </p>
       </section>
 
-      <section class="about" id="about" aria-labelledby="about-title">
+      <section
+        class="about scroll-reveal"
+        id="about"
+        aria-labelledby="about-title"
+      >
         <h2 id="about-title">Sobre Nós</h2>
         <p>Saiba mais sobre a nossa missão, visão e valores.</p>
       </section>
 
-      <section class="contact" id="contact" aria-labelledby="contact-title">
+      <section
+        class="contact scroll-reveal"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
         <h2 id="contact-title">Contato</h2>
         <p>
           Entre em contato conosco para mais informações ou para agendar sua
