@@ -20,12 +20,9 @@
   <body>
     <header class="navbar">
       <div class="logo"><img src="./assets/kypy-logo.webp" alt="" /></div>
-      <button class="menu-toggle" aria-label="Abrir menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="menu-container">
+      <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      <nav class="menu-container" id="menu-container">
+        <button class="menu-close" id="close-menu" aria-label="Fechar menu">✕</button>
         <ul class="menu">
           <li><a href="#home">Início</a></li>
           <li><a href="#services">Serviços</a></li>
@@ -40,7 +37,7 @@
           <img class="perfil" src="./assets/perfil-doutor.webp" alt="" />
           <article class="container-texts">
             <h1 class="home-title">Cuidar da sua saúde é a nossa prioridade</h1>
-            <p>
+            <p class="home-paragraph">
               Na Kypy Saúde, unimos excelência médica, atendimento humanizado e
               estrutura moderna para oferecer a você e à sua família o cuidado
               que merecem. <br />
@@ -48,10 +45,9 @@
               para garantir diagnósticos precisos, tratamentos eficazes e
               bem-estar contínuo.
             </p>
-            <a href="">Agende sua consulta!</a>
+            <a class="home-button" href="">Agende sua consulta!</a>
           </article>
         </div>
-       
       </section>
     </main>
     <script src="./scripts.js"></script>
