@@ -116,7 +116,8 @@ body {
 
 .video-background {
   position: absolute;
-  background-image: url("./assets/background-home.webp");
+  background: url("./assets/background-intro.webp") no-repeat center center;
+  background-size: cover;
   top: 0;
   left: 0;
   width: 100%;
@@ -187,11 +188,12 @@ body {
   justify-content: center;
   font-family: "Roboto slab", sans-serif;
   width: 15rem;
-  color: #fff;
+  color: #d71b1b;
   padding: 1rem;
-  border: solid 1px #242122;
+  border: solid 2px #242122;
   border-radius: 10px;
   transition: 0.3s ease;
+  background: #dbbb8ebd;
 }
 
 .home-button:hover {
@@ -246,6 +248,10 @@ body {
 
   .menu-toggle {
     display: block;
+  }
+
+  .video-background {
+    background-position: left center;
   }
 
   .container-home {
