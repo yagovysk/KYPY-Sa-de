@@ -101,7 +101,6 @@
           ✕
         </button>
         <ul class="menu">
-          <li><a href="#home">Início</a></li>
           <li><a href="#services">Serviços</a></li>
           <li><a href="#about">Sobre Nós</a></li>
           <li><a href="#contact">Contato</a></li>
@@ -110,6 +109,21 @@
     </header>
 
     <main id="main-content">
+      <section class="intro-video">
+        <video
+          class="video-background"
+          src="./assets/intro.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
+        <div class="video-overlay">
+          <a class="home-button" href="#contact" role="button"
+            >Agende sua consulta!</a
+          >
+        </div>
+      </section>
       <section class="home" id="home" aria-labelledby="home-title">
         <div class="container-home scroll-reveal">
           <div>
@@ -125,22 +139,6 @@
               Médico da equipe <strong>Dr. Pedro Célio</strong>
             </p>
           </div>
-
-          <article class="container-texts">
-            <h1 class="home-title scroll-reveal">
-              Cuidar da sua saúde é a nossa prioridade
-            </h1>
-            <p class="home-paragraph scroll-reveal">
-              Na Kypy Saúde, unimos excelência médica, atendimento humanizado e
-              estrutura moderna para oferecer a você e à sua família o cuidado
-              que merecem. Atuamos com profissionais qualificados em diversas
-              especialidades para garantir diagnósticos precisos, tratamentos
-              eficazes e bem-estar contínuo.
-            </p>
-            <a class="home-button" href="#contact" role="button"
-              >Agende sua consulta!</a
-            >
-          </article>
         </div>
       </section>
 
