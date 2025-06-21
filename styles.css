@@ -190,14 +190,17 @@ body {
   width: 15rem;
   color: #d71b1b;
   padding: 1rem;
-  border: solid 2px #242122;
-  border-radius: 10px;
-  transition: 0.3s ease;
-  background: #dbbb8ebd;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #f8e4c4, #e8cbb1);
 }
 
 .home-button:hover {
-  transform: scale(1.05);
+  background: linear-gradient(to right, #e8cbb1, #d9b293);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
 
 .menu-toggle {
