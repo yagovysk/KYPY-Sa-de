@@ -8,6 +8,14 @@
       content="Clínica médica com excelência em saúde, atendimento humanizado e profissionais qualificados. Agende sua consulta na Kypy Saúde."
     />
     <meta name="author" content="Kypy Saúde" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://kypysaude.netlify.app/" />
+    <link
+      rel="alternate"
+      hreflang="pt-BR"
+      href="https://kypysaude.netlify.app/"
+    />
+    <meta name="theme-color" content="#242122" />
 
     <!-- SEO Social -->
     <meta
@@ -44,44 +52,49 @@
         "@context": "https://schema.org",
         "@type": "MedicalClinic",
         "name": "Kypy Saúde",
-        "image": "https://kypysaude.netlify.app/assets/kypy-logo.webp",
         "url": "https://kypysaude.netlify.app/",
         "logo": "https://kypysaude.netlify.app/assets/kypy-logo.webp",
+        "image": "https://kypysaude.netlify.app/assets/kypy-logo.webp",
         "description": "Clínica médica com atendimento humanizado e profissionais qualificados. Especialidades médicas para sua saúde e bem-estar.",
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "",
           "addressLocality": "Sua Cidade",
           "addressRegion": "Seu Estado",
+          "postalCode": "",
           "addressCountry": "BR"
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+55-xx-xxxx-xxxx",
-          "contactType": "customer service",
-          "areaServed": "BR",
-          "availableLanguage": ["Portuguese"]
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        },
-        {
-            "@context": "https://schema.org",
-            "@type": "MedicalClinic",
-            "name": "Kypy Saúde",
-            ...
-            "employee": {
-              "@type": "Person",
-              "name": "Dr. Pedro Célio",
-              "jobTitle": "Médico Clínico Geral"
-        }
+        "telephone": "+55-xx-xxxx-xxxx",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday"
+            ],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ],
+        "priceRange": "$$",
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Dr. Pedro Célio",
+            "jobTitle": "Médico Clínico Geral"
+          }
+        ]
       }
     </script>
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link"
+      >Pular para o conteúdo principal</a
+    >
     <header class="navbar" role="banner">
       <div class="logo">
         <a href="#home" aria-label="Ir para início">
@@ -125,7 +138,7 @@
         </div>
       </section>
       <section class="home" id="home" aria-labelledby="home-title">
-        <div class="container-home scroll-reveal">
+        <div class="container-home">
           <div>
             <img
               class="perfil scroll-reveal"
@@ -142,43 +155,151 @@
         </div>
       </section>
 
-      <section
-        class="services scroll-reveal"
-        id="services"
-        aria-labelledby="services-title"
-      >
-        <h2 id="services-title">Serviços</h2>
-        <p>
+      <section class="services" id="services" aria-labelledby="services-title">
+        <h2 id="services-title" class="scroll-reveal">Serviços</h2>
+        <p class="scroll-reveal">
           Conheça as especialidades médicas que oferecemos para cuidar da sua
           saúde.
         </p>
+        <div class="section">
+          <div class="container">
+            <div class="service-grid scroll-reveal">
+              <article class="service-card" aria-label="Clínica Geral">
+                <h3>Clínica Geral</h3>
+                <p>
+                  Atendimento amplo e integral, com foco na prevenção e no
+                  cuidado contínuo.
+                </p>
+              </article>
+              <article class="service-card" aria-label="Pediatria">
+                <h3>Pediatria</h3>
+                <p>
+                  Acompanhamento da saúde infantil, do recém-nascido ao
+                  adolescente.
+                </p>
+              </article>
+              <article class="service-card" aria-label="Ginecologia">
+                <h3>Ginecologia</h3>
+                <p>Cuidado com a saúde da mulher em todas as fases da vida.</p>
+              </article>
+              <article class="service-card" aria-label="Cardiologia">
+                <h3>Cardiologia</h3>
+                <p>
+                  Diagnóstico e tratamento das doenças do coração e sistema
+                  circulatório.
+                </p>
+              </article>
+              <article class="service-card" aria-label="Ortopedia">
+                <h3>Ortopedia</h3>
+                <p>Tratamento de dores articulares, lesões e saúde óssea.</p>
+              </article>
+              <article class="service-card" aria-label="Exames de Rotina">
+                <h3>Exames de Rotina</h3>
+                <p>
+                  Check-ups e exames laboratoriais para acompanhamento
+                  periódico.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section
-        class="about scroll-reveal"
-        id="about"
-        aria-labelledby="about-title"
-      >
-        <h2 id="about-title">Sobre Nós</h2>
-        <p>Saiba mais sobre a nossa missão, visão e valores.</p>
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title" class="scroll-reveal">Sobre Nós</h2>
+        <div class="section">
+          <div class="container">
+            <div class="scroll-reveal">
+              <p>Saiba mais sobre a nossa missão, visão e valores.</p>
+              <p>
+                A Kypy Saúde promove atendimento humanizado, com foco em escuta
+                ativa, acolhimento e segurança do paciente. Unimos tecnologia e
+                empatia para oferecer a melhor experiência em saúde.
+              </p>
+            </div>
+            <div class="feature-list scroll-reveal">
+              <div class="feature" aria-label="Atendimento humanizado">
+                <strong>Atendimento humanizado</strong>
+                <p>
+                  Relação de confiança, respeito e individualidade em cada
+                  consulta.
+                </p>
+              </div>
+              <div class="feature" aria-label="Profissionais qualificados">
+                <strong>Profissionais qualificados</strong>
+                <p>Equipe com formação sólida e atualização contínua.</p>
+              </div>
+              <div class="feature" aria-label="Estrutura moderna">
+                <strong>Estrutura moderna</strong>
+                <p>
+                  Ambiente confortável e equipamentos para um cuidado completo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section
-        class="contact scroll-reveal"
-        id="contact"
-        aria-labelledby="contact-title"
-      >
-        <h2 id="contact-title">Contato</h2>
-        <p>
-          Entre em contato conosco para mais informações ou para agendar sua
-          consulta.
-        </p>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title" class="scroll-reveal">Contato</h2>
+        <div class="section">
+          <div class="container">
+            <div class="scroll-reveal">
+              <p>
+                Entre em contato conosco para mais informações ou para agendar
+                sua consulta.
+              </p>
+            </div>
+            <aside
+              class="cta-box scroll-reveal"
+              aria-label="Agendamento e dúvidas"
+            >
+              <p><strong>Agende agora mesmo</strong></p>
+              <div class="cta-actions">
+                <a
+                  class="btn btn-primary"
+                  href="https://wa.me/5561983663052?text=Olá%20Kypy%20Saúde,%20gostaria%20de%20agendar%20uma%20consulta."
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Agendar via WhatsApp"
+                >
+                  WhatsApp
+                </a>
+                <a
+                  class="btn btn-outline"
+                  href="tel:+55-61-98366-3052"
+                  aria-label="Ligar para a clínica"
+                >
+                  Ligar
+                </a>
+                <a
+                  class="btn btn-outline"
+                  href="mailto:kypysaude@gmail.com?subject=Agendamento%20de%20consulta"
+                  aria-label="Enviar e-mail para a clínica"
+                >
+                  E-mail
+                </a>
+              </div>
+            </aside>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer role="contentinfo">
       <p>&copy; 2025 Kypy Saúde. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <a class="togyro-link" href="">TogyroGroup</a></p>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button
+      id="scroll-up"
+      class="scroll-up"
+      aria-label="Voltar ao topo"
+      title="Voltar ao topo"
+    >
+      ↑
+    </button>
 
     <script src="./scripts.js" defer></script>
   </body>
