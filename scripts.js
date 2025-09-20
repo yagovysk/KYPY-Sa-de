@@ -62,4 +62,28 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+  // Sound toggle for hero video
+  const heroVideo = document.querySelector(".video-background");
+  const soundToggle = document.getElementById("sound-toggle");
+  soundToggle?.addEventListener("click", async () => {
+    if (!heroVideo) return;
+    try {
+      if (heroVideo.muted) {
+        heroVideo.muted = false;
+        // Some browsers require a play() call after unmuting
+        await heroVideo.play();
+        soundToggle.textContent = "🔊";
+        soundToggle.setAttribute("aria-label", "Desativar áudio do vídeo");
+      } else {
+        heroVideo.muted = true;
+        soundToggle.textContent = "🔇";
+        soundToggle.setAttribute("aria-label", "Ativar áudio do vídeo");
+      }
+    } catch (e) {
+      // Fallback: if play() fails, keep muted and inform via icon
+      heroVideo.muted = true;
+      soundToggle.textContent = "🔇";
+    }
+  });
 });

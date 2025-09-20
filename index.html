@@ -125,17 +125,28 @@
       <section class="intro-video">
         <video
           class="video-background"
-          src="./assets/intro.mp4"
+          src="./assets/kypy-video-bsb.mp4"
           autoplay
           muted
           loop
           playsinline
         ></video>
         <div class="video-overlay">
-          <a class="home-button" href="#contact" role="button"
-            ><strong>Consulta online!</strong></a
-          >
+          <div class="hero-stack">
+            <h1 id="home-title" class="hero-title">Bem-vindo à Kypy Saúde</h1>
+            <a class="home-button" href="#contact" role="button"
+              ><strong>Consulta online!</strong></a
+            >
+          </div>
         </div>
+        <button
+          id="sound-toggle"
+          class="sound-toggle"
+          aria-label="Ativar áudio do vídeo"
+          title="Ativar/Desativar som"
+        >
+          🔇
+        </button>
       </section>
       <section class="home" id="home" aria-labelledby="home-title">
         <div class="container-home">
@@ -149,7 +160,7 @@
               loading="lazy"
             />
             <p class="perfil-paragraph scroll-reveal">
-              Médico da equipe <strong>Dr. Pedro Célio</strong>
+              Médico <span></span><strong>Dr. Pedro Célio</strong>
             </p>
           </div>
         </div>
@@ -169,24 +180,6 @@
                 <p>
                   Atendimento amplo e integral, com foco na prevenção e no
                   cuidado contínuo.
-                </p>
-              </article>
-              <article class="service-card" aria-label="Pediatria">
-                <h3>Pediatria</h3>
-                <p>
-                  Acompanhamento da saúde infantil, do recém-nascido ao
-                  adolescente.
-                </p>
-              </article>
-              <article class="service-card" aria-label="Ginecologia">
-                <h3>Ginecologia</h3>
-                <p>Cuidado com a saúde da mulher em todas as fases da vida.</p>
-              </article>
-              <article class="service-card" aria-label="Cardiologia">
-                <h3>Cardiologia</h3>
-                <p>
-                  Diagnóstico e tratamento das doenças do coração e sistema
-                  circulatório.
                 </p>
               </article>
               <article class="service-card" aria-label="Ortopedia">
@@ -225,9 +218,9 @@
                   consulta.
                 </p>
               </div>
-              <div class="feature" aria-label="Profissionais qualificados">
-                <strong>Profissionais qualificados</strong>
-                <p>Equipe com formação sólida e atualização contínua.</p>
+              <div class="feature" aria-label="Profissionalismo de ponta">
+                <strong>Profissionalismo de ponta</strong>
+                <p>Serviços com formação sólida e atualização contínua.</p>
               </div>
               <div class="feature" aria-label="Estrutura moderna">
                 <strong>Estrutura moderna</strong>
@@ -258,7 +251,7 @@
               <div class="cta-actions">
                 <a
                   class="btn btn-primary"
-                  href="https://wa.me/5561983663052?text=Olá%20Kypy%20Saúde,%20gostaria%20de%20agendar%20uma%20consulta."
+                  href="https://wa.me/556193656589?text=Olá%20Kypy%20Saúde,%20gostaria%20de%20agendar%20uma%20consulta."
                   target="_blank"
                   rel="noopener"
                   aria-label="Agendar via WhatsApp"

@@ -21,6 +21,11 @@ body {
   --accent-text: #d71b1b; /* já existente no botão .home-button */
   --card-bg: #ffffff;
   --text-muted: #5c636a;
+  /* CTA palette */
+  --cta-bg: #cbb68f; /* dourado */
+  --cta-hover: #3fa796; /* verde para hover */
+  --cta-text: #ffffff; /* texto branco */
+  --accent-green: #3fa796; /* verde de apoio */
 }
 
 .navbar {
@@ -128,17 +133,30 @@ body {
   height: 100vh;
   overflow: hidden;
 }
+.intro-video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Gradient escuro sutil: topo transparente, base mais escura */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  z-index: 1; /* acima do video (-1) e abaixo dos botões (2) */
+}
 
 .video-background {
   position: absolute;
-  background: url("./assets/background-intro.webp") no-repeat center center;
-  background-size: cover;
+  background: none;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: top center;
+  object-fit: cover;
+  object-position: center;
   z-index: -1;
 }
 
@@ -152,20 +170,45 @@ body {
 }
 
 .video-overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 38rem;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: end center; /* bottom-center */
+  padding: 1rem;
+  padding-bottom: 6rem; /* move o botão mais para baixo */
+  /* Coloca título e botão acima da sombra/gradiente (z=1) */
+  z-index: 2;
+}
+.hero-stack {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+.hero-title {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.2;
+  position: relative;
+  /* Mover título para cima sem afetar o botão */
+  transform: translateY(-2.5rem);
+  /* Agora o título também fica à frente da sombra */
+  z-index: 2;
 }
 
 .container-home {
   display: flex;
+  text-align: center;
   padding: 0 7rem;
 }
 
 .perfil {
   width: 25rem;
   border-radius: 10px;
+  filter: grayscale(0.2) saturate(0.9) contrast(1.05);
 }
 
 .perfil-paragraph {
@@ -213,19 +256,22 @@ body {
   justify-content: center;
   font-family: "Roboto slab", sans-serif;
   width: 15rem;
-  color: #d71b1b;
+  color: var(--cta-text);
   padding: 1rem;
-  border: none;
+  border: 1px solid transparent;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
-  background: linear-gradient(to right, #f8e4c4, #e8cbb1);
+  background: var(--cta-bg);
+  position: relative; /* permite z-index */
+  z-index: 3; /* acima do gradiente (z=1) */
 }
 
 .home-button:hover {
-  background: linear-gradient(to right, #e8cbb1, #d9b293);
+  background: var(--cta-hover);
+  border-color: var(--cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 14px rgba(63, 167, 150, 0.25);
 }
 
 .menu-toggle {
@@ -334,10 +380,10 @@ body {
   font-size: 0.95rem;
 }
 
-/* About section */
+/* About section (contraste claro) */
 .about {
-  background: var(--brand-bg);
-  color: var(--brand-accent);
+  background: #ffffff;
+  color: #242122;
 }
 .about .container {
   display: grid;
@@ -350,11 +396,10 @@ body {
   grid-column: 1 / -1;
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  color: var(--brand-accent);
+  color: #1f2937;
 }
 .about p {
-  color: var(--brand-accent);
-  opacity: 0.9;
+  color: #374151;
 }
 .about .feature-list {
   display: grid;
@@ -363,8 +408,8 @@ body {
   margin-top: 1rem;
 }
 .about .feature {
-  background: var(--brand-bg);
-  border: 1px solid var(--brand-accent);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 1rem;
 }
@@ -419,26 +464,35 @@ body {
     border-color 0.2s ease;
 }
 .btn-primary {
-  /* replica o estilo do .home-button para manter consistência */
-  background: linear-gradient(to right, #f8e4c4, #e8cbb1);
-  color: var(--accent-text);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background: var(--cta-bg);
+  color: var(--cta-text);
+  border-color: transparent;
+  box-shadow: 0 8px 16px rgba(203, 182, 143, 0.25);
 }
 .btn-primary:hover {
-  background: linear-gradient(to right, #e8cbb1, #d9b293);
+  background: var(--cta-hover);
+  border-color: var(--cta-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 18px rgba(63, 167, 150, 0.25);
 }
 .btn-outline {
   background: transparent;
-  color: var(--brand-accent);
-  border-color: var(--brand-accent);
+  color: var(--accent-green);
+  border-color: var(--accent-green);
 }
 .btn-outline:hover {
-  background: rgba(213, 214, 137, 0.08);
+  background: var(--accent-green);
+  color: #ffffff;
 }
-.btn-outline:hover {
-  background: #f7fffe;
+
+/* Ícones minimalistas nos botões */
+.btn svg.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 /* Footer */
@@ -485,6 +539,28 @@ footer p {
 }
 .scroll-up:hover {
   background: #1a1818;
+}
+
+/* Sound toggle button over video */
+.sound-toggle {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-accent);
+  background: rgba(0, 0, 0, 0.45);
+  color: var(--brand-accent);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  z-index: 0; /* abaixo do gradiente (z=1) */
+}
+.sound-toggle:hover {
+  background: rgba(0, 0, 0, 0.65);
 }
 
 /* Responsividade das novas seções */
@@ -540,10 +616,6 @@ footer p {
 
   .menu-toggle {
     display: block;
-  }
-
-  .video-background {
-    background-position: left center;
   }
 
   .container-home {
@@ -603,12 +675,18 @@ footer p {
   }
 
   .video-overlay {
-    padding-top: 22rem;
+    padding: 1rem;
+  }
+  .video-overlay {
+    padding-bottom: 3rem;
   }
 
   .home-button {
     width: auto;
     padding: 0.75rem 1rem;
+  }
+  .hero-title {
+    font-size: 1.5rem;
   }
 
   .contact .cta-actions {
