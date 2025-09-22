@@ -609,7 +609,9 @@ footer p {
   justify-content: center;
   z-index: 2000; /* acima de tudo */
 }
-.modal[aria-hidden="false"] { display: flex; }
+.modal[aria-hidden="false"] {
+  display: flex;
+}
 .modal-backdrop {
   position: absolute;
   inset: 0;
@@ -636,11 +638,14 @@ footer p {
   height: 40px;
   border-radius: 999px;
   border: 1px solid var(--brand-accent);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: var(--brand-accent);
   cursor: pointer;
 }
-.modal-content { overflow: hidden; border-radius: 10px; }
+.modal-content {
+  overflow: hidden;
+  border-radius: 10px;
+}
 .modal-video {
   width: 100%;
   height: auto;
@@ -649,8 +654,14 @@ footer p {
 }
 
 @media (max-width: 640px) {
-  .hero-modal-btn { width: 100%; text-align: center; }
-  .modal-dialog { width: 94vw; padding: 0.75rem; }
+  .hero-modal-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .modal-dialog {
+    width: 94vw;
+    padding: 0.75rem;
+  }
 }
 
 /* Responsividade das novas seções */

@@ -115,7 +115,10 @@ document.addEventListener("DOMContentLoaded", () => {
   modalCloseBtn?.addEventListener("click", () => closeModal(clinicModal));
   modalBackdrop?.addEventListener("click", () => closeModal(clinicModal));
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && clinicModal?.getAttribute("aria-hidden") === "false") {
+    if (
+      e.key === "Escape" &&
+      clinicModal?.getAttribute("aria-hidden") === "false"
+    ) {
       closeModal(clinicModal);
     }
   });
