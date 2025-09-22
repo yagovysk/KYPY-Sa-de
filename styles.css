@@ -37,6 +37,8 @@ body {
   background-color: #242122;
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* cria contexto de empilhamento */
+  z-index: 10; /* acima do overlay do vídeo (z=2) */
 }
 
 .logo img {
@@ -141,9 +143,11 @@ body {
   /* Gradient escuro sutil: topo transparente, base mais escura */
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.2) 0%,
-    rgba(0, 0, 0, 0.35) 40%,
-    rgba(0, 0, 0, 0.55) 100%
+    rgba(0, 0, 0, 0.071) 0%,
+    /* transparente no topo */ rgba(0, 0, 0, 0.059) 58%,
+    /* mantém transparente até mais embaixo */ rgba(0, 0, 0, 0.342) 75%,
+    /* começa a escurecer mais abaixo */ rgba(0, 0, 0, 0.527) 100%
+      /* mais escuro apenas na base */
   );
   z-index: 1; /* acima do video (-1) e abaixo dos botões (2) */
 }
@@ -173,9 +177,9 @@ body {
   position: absolute;
   inset: 0;
   display: grid;
-  place-items: end center; /* bottom-center */
+  place-items: start center; /* top-center */
   padding: 1rem;
-  padding-bottom: 6rem; /* move o botão mais para baixo */
+  padding-top: 6rem; /* espaço do topo para não colar no navbar */
   /* Coloca título e botão acima da sombra/gradiente (z=1) */
   z-index: 2;
 }
@@ -193,9 +197,9 @@ body {
   font-size: 2rem;
   line-height: 1.2;
   position: relative;
-  /* Mover título para cima sem afetar o botão */
-  transform: translateY(-2.5rem);
-  /* Agora o título também fica à frente da sombra */
+  /* Título posicionado naturalmente no topo */
+  transform: none;
+  /* Título também fica à frente da sombra */
   z-index: 2;
 }
 
@@ -274,6 +278,12 @@ body {
   box-shadow: 0 6px 14px rgba(63, 167, 150, 0.25);
 }
 
+/* Botão secundário abaixo do CTA principal */
+.hero-modal-btn {
+  margin-top: 0.5rem;
+  z-index: 3; /* garantir acima do overlay */
+}
+
 .menu-toggle {
   display: none;
 }
@@ -331,6 +341,7 @@ body {
 
 /* Services section */
 .services {
+  padding: 2rem 0;
   background: var(--brand-bg);
   color: var(--brand-accent);
 }
@@ -382,6 +393,7 @@ body {
 
 /* About section (contraste claro) */
 .about {
+  padding: 2rem 0;
   background: #ffffff;
   color: #242122;
 }
@@ -416,6 +428,7 @@ body {
 
 /* Contact section */
 .contact {
+  padding: 2rem 0;
   background: var(--brand-bg);
   color: var(--brand-accent);
 }
@@ -485,6 +498,20 @@ body {
   color: #ffffff;
 }
 
+/* Específico: botão "Veja também..." com fundo branco */
+.btn-outline.hero-modal-btn {
+  background: #ffffff;
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+/* Hover igual ao padrão outline (fundo verde, texto branco) */
+.btn-outline.hero-modal-btn:hover {
+  background: var(--accent-green);
+  color: #ffffff;
+  border-color: var(--accent-green);
+}
+
 /* Ícones minimalistas nos botões */
 .btn svg.icon {
   width: 18px;
@@ -493,6 +520,16 @@ body {
   stroke: currentColor;
   fill: none;
   stroke-width: 2;
+}
+
+/* Ícones dos cards de serviço */
+.service-card .service-icon {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  margin-bottom: 0.5rem;
 }
 
 /* Footer */
@@ -557,10 +594,63 @@ footer p {
   cursor: pointer;
   backdrop-filter: blur(2px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
-  z-index: 0; /* abaixo do gradiente (z=1) */
+  z-index: 3; /* acima do overlay (z=2) para ser clicável */
 }
 .sound-toggle:hover {
   background: rgba(0, 0, 0, 0.65);
+}
+
+/* Modal base */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* toggled via JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* acima de tudo */
+}
+.modal[aria-hidden="false"] { display: flex; }
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+.modal-dialog {
+  position: relative;
+  background: #111;
+  color: #f9f9f9;
+  border: 1px solid var(--brand-accent);
+  border-radius: 14px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  width: min(92vw, 880px);
+  max-height: 86vh;
+  padding: 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--brand-accent);
+  background: rgba(0,0,0,0.5);
+  color: var(--brand-accent);
+  cursor: pointer;
+}
+.modal-content { overflow: hidden; border-radius: 10px; }
+.modal-video {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  background: #000;
+}
+
+@media (max-width: 640px) {
+  .hero-modal-btn { width: 100%; text-align: center; }
+  .modal-dialog { width: 94vw; padding: 0.75rem; }
 }
 
 /* Responsividade das novas seções */
@@ -674,11 +764,20 @@ footer p {
     height: 15rem;
   }
 
-  .video-overlay {
-    padding: 1rem;
+  /* Hero video: reduzir a sensação de zoom no mobile */
+  .intro-video {
+    height: 100svh; /* usa altura do viewport considerando UI móvel */
   }
+  .video-background {
+    object-fit: contain; /* mostra mais do vídeo, sem cortar demais */
+    background: #000; /* barras pretas discretas quando necessário */
+  }
+
   .video-overlay {
-    padding-bottom: 3rem;
+    place-items: end center; /* bottom-center no mobile */
+    padding: 0.75rem;
+    padding-top: 0.75rem;
+    padding-bottom: 5rem; /* espaço para não colidir com o sound-toggle */
   }
 
   .home-button {

@@ -86,4 +86,37 @@ document.addEventListener("DOMContentLoaded", () => {
       soundToggle.textContent = "🔇";
     }
   });
+
+  // Modal: Outra clínica (Barreiras, BA)
+  const openClinicBtn = document.getElementById("open-clinic-modal");
+  const clinicModal = document.getElementById("clinic-modal");
+  const clinicVideo = document.getElementById("clinic-video");
+  const modalCloseBtn = clinicModal?.querySelector(".modal-close");
+  const modalBackdrop = clinicModal?.querySelector(".modal-backdrop");
+
+  const openModal = (modal) => {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "false");
+    // focus first focusable element
+    modal.querySelector(".modal-close")?.focus();
+  };
+  const closeModal = (modal) => {
+    if (!modal) return;
+    modal.setAttribute("aria-hidden", "true");
+    // pause video when closing
+    if (clinicVideo && !clinicVideo.paused) clinicVideo.pause();
+    openClinicBtn?.focus();
+  };
+
+  openClinicBtn?.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal(clinicModal);
+  });
+  modalCloseBtn?.addEventListener("click", () => closeModal(clinicModal));
+  modalBackdrop?.addEventListener("click", () => closeModal(clinicModal));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && clinicModal?.getAttribute("aria-hidden") === "false") {
+      closeModal(clinicModal);
+    }
+  });
 });
