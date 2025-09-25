@@ -785,10 +785,10 @@ footer p {
   }
 
   .video-overlay {
-    place-items: end center; /* bottom-center no mobile */
+    place-items: start center; /* top-center no mobile */
     padding: 0.75rem;
-    padding-top: 0.75rem;
-    padding-bottom: 5rem; /* espaço para não colidir com o sound-toggle */
+    padding-top: 4.5rem; /* espaço abaixo da navbar */
+    padding-bottom: 1rem;
   }
 
   .home-button {
