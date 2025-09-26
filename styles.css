@@ -545,7 +545,14 @@ footer p {
 
 .togyro-link {
   text-decoration: none;
-  color: red;
+}
+
+.togyro-black {
+  color: #000;
+}
+
+.togyro-red {
+  color: #dc2626;
 }
 
 /* Scroll to top button */
