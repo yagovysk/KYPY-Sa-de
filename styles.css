@@ -259,15 +259,16 @@ body {
   display: flex;
   justify-content: center;
   font-family: "Roboto slab", sans-serif;
-  width: 15rem;
+  width: 12rem;
   color: var(--cta-text);
-  padding: 1rem;
+  padding: 0.8rem;
   border: 1px solid transparent;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   transition: all 0.3s ease;
   background: var(--cta-bg);
   position: relative; /* permite z-index */
+  font-size: 0.95rem;
   z-index: 3; /* acima do gradiente (z=1) */
 }
 
@@ -800,7 +801,8 @@ footer p {
 
   .home-button {
     width: auto;
-    padding: 0.75rem 1rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
   }
   .hero-title {
     font-size: 1.5rem;
