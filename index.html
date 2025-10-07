@@ -95,6 +95,172 @@
     <a href="#main-content" class="skip-link"
       >Pular para o conteúdo principal</a
     >
+
+    <!-- Botão flutuante de acessibilidade -->
+    <button
+      id="accessibility-toggle"
+      class="accessibility-toggle"
+      aria-label="Abrir menu de acessibilidade"
+      title="Acessibilidade"
+    >
+      <svg
+        class="accessibility-icon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <circle cx="12" cy="5" r="2" />
+        <circle cx="12" cy="12" r="8" fill="none" />
+        <path d="M12 9v6" />
+        <path d="M9 11l3-2 3 2" />
+        <path d="M9 17l3-2 3 2" />
+      </svg>
+    </button>
+
+    <!-- Menu de acessibilidade -->
+    <aside
+      id="accessibility-panel"
+      class="accessibility-panel"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="accessibility-title"
+    >
+      <div class="accessibility-header">
+        <h2 id="accessibility-title">Acessibilidade</h2>
+        <button
+          id="accessibility-close"
+          class="accessibility-close"
+          aria-label="Fechar menu de acessibilidade"
+        >
+          ✕
+        </button>
+      </div>
+      <div class="accessibility-body">
+        <div class="accessibility-group">
+          <h3>Tamanho do Texto</h3>
+          <div class="accessibility-controls">
+            <button
+              class="accessibility-btn"
+              data-action="font-decrease"
+              aria-label="Diminuir tamanho do texto"
+            >
+              A-
+            </button>
+            <button
+              class="accessibility-btn"
+              data-action="font-reset"
+              aria-label="Tamanho padrão do texto"
+            >
+              A
+            </button>
+            <button
+              class="accessibility-btn"
+              data-action="font-increase"
+              aria-label="Aumentar tamanho do texto"
+            >
+              A+
+            </button>
+          </div>
+        </div>
+
+        <div class="accessibility-group">
+          <h3>Espaçamento</h3>
+          <div class="accessibility-controls">
+            <button
+              class="accessibility-btn"
+              data-action="spacing-increase"
+              aria-label="Aumentar espaçamento entre linhas"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 8h18M3 12h18M3 16h18" />
+              </svg>
+            </button>
+            <button
+              class="accessibility-btn"
+              data-action="spacing-reset"
+              aria-label="Resetar espaçamento"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 10h18M3 14h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="accessibility-group">
+          <h3>Tema</h3>
+          <div class="accessibility-controls">
+            <button
+              class="accessibility-btn"
+              data-action="theme-light"
+              aria-label="Modo claro"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="5" />
+                <path
+                  d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                />
+              </svg>
+            </button>
+            <button
+              class="accessibility-btn"
+              data-action="theme-dark"
+              aria-label="Modo escuro"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            </button>
+            <button
+              class="accessibility-btn"
+              data-action="theme-high-contrast"
+              aria-label="Alto contraste"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10" fill="none" />
+                <path d="M12 2a10 10 0 0 1 0 20V2z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="accessibility-group">
+          <h3>Outras Opções</h3>
+          <label class="accessibility-toggle-option">
+            <input
+              type="checkbox"
+              id="readable-font"
+              aria-label="Fonte legível"
+            />
+            <span>Fonte Legível</span>
+          </label>
+          <label class="accessibility-toggle-option">
+            <input
+              type="checkbox"
+              id="highlight-links"
+              aria-label="Destacar links"
+            />
+            <span>Destacar Links</span>
+          </label>
+          <label class="accessibility-toggle-option">
+            <input
+              type="checkbox"
+              id="focus-indicator"
+              aria-label="Indicador de foco"
+            />
+            <span>Indicador de Foco</span>
+          </label>
+        </div>
+
+        <button
+          class="accessibility-btn accessibility-reset-all"
+          data-action="reset-all"
+        >
+          Restaurar Padrões
+        </button>
+      </div>
+    </aside>
+
     <header class="navbar" role="banner">
       <div class="logo">
         <a href="#home" aria-label="Ir para início">
