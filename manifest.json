@@ -18,7 +18,7 @@
       "purpose": "any maskable"
     },
     {
-      "src": "./assets/kypy-logo.webp", 
+      "src": "./assets/kypy-logo.webp",
       "sizes": "512x512",
       "type": "image/webp",
       "purpose": "any maskable"
