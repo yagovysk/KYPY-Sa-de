@@ -1,0 +1,18 @@
+/* TEAM */
+Clínica: Kypy Saúde
+Médico Responsável: Dr. Pedro Célio
+Especialidade: Clínica Geral, Endocrinologia
+Localização: Brasília, DF, Brasil
+
+/* THANKS */
+Google Fonts
+Poppins Font Family
+
+/* SITE */
+Domínio: kypysaude.com.br
+Linguagem: Português (Brasil)
+Última atualização: 2025/10/08
+Tecnologias: HTML5, CSS3, JavaScript
+Padrões: W3C, WCAG 2.1, Schema.org
+Otimização: SEO, PWA, Acessibilidade
+Suporte: Telemedicina, Consultas Online

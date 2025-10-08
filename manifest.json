@@ -1,0 +1,29 @@
+{
+  "name": "Kypy Saúde - Clínica Médica",
+  "short_name": "Kypy Saúde",
+  "description": "Clínica médica especializada em atendimento humanizado com Dr. Pedro Célio. Consultas presenciais e online em Brasília-DF.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#242122",
+  "theme_color": "#242122",
+  "orientation": "portrait-primary",
+  "categories": ["medical", "health", "healthcare"],
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "icons": [
+    {
+      "src": "./assets/kypy-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/kypy-logo.webp", 
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "scope": "/",
+  "prefer_related_applications": false
+}
