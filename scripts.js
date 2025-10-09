@@ -1,4 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // FORÇA O BOTÃO DE ACESSIBILIDADE A APARECER IMEDIATAMENTE
+  const accessibilityBtn = document.getElementById("accessibility-toggle");
+  if (accessibilityBtn) {
+    accessibilityBtn.style.cssText = `
+      position: fixed !important;
+      left: 1rem !important;
+      bottom: 1.25rem !important;
+      z-index: 2147483647 !important;
+      display: flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    `;
+  }
+
   const menuToggle = document.querySelector(".menu-toggle");
   const menuClose = document.querySelector(".menu-close");
   const menuContainer = document.getElementById("menu-container");

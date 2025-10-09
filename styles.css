@@ -4,17 +4,34 @@
   box-sizing: border-box;
 }
 
+/* FORÇA O BOTÃO DE ACESSIBILIDADE A APARECER SEMPRE - MÁXIMA PRIORIDADE */
+#accessibility-toggle,
+button#accessibility-toggle,
+.accessibility-toggle {
+  position: fixed !important;
+  left: 1rem !important;
+  bottom: 1.25rem !important;
+  z-index: 2147483647 !important;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateZ(0) !important;
+  will-change: transform !important;
+  top: auto !important;
+  right: auto !important;
+  margin: 0 !important;
+  isolation: isolate !important;
+}
+
 html {
   overflow-x: hidden;
-  position: relative;
 }
 
 body {
   margin: 0;
-  position: relative;
   overflow-x: hidden;
   min-height: 100vh;
-  z-index: 0;
 }
 
 /* Garante que o botão de acessibilidade apareça imediatamente */
@@ -178,6 +195,7 @@ main {
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  z-index: auto;
 }
 .intro-video::after {
   content: "";
@@ -901,11 +919,20 @@ footer p {
   box-shadow: 0 8px 24px rgba(213, 214, 137, 0.4);
 }
 .accessibility-toggle svg {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+.accessibility-toggle:hover svg {
+  transform: scale(1.1);
+}
+
+.accessibility-toggle.active svg {
+  transform: scale(1.05) rotate(5deg);
 }
 
 /* Menu/Painel de Acessibilidade */
