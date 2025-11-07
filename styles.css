@@ -334,11 +334,99 @@ main {
   z-index: 3; /* acima do gradiente (z=1) */
 }
 
+/* Animação chamativa para o botão CTA */
+.animated-cta {
+  animation: pulse-glow 2s infinite, bounce-subtle 3s infinite ease-in-out;
+  box-shadow: 0 4px 15px rgba(203, 182, 143, 0.4),
+    0 0 20px rgba(203, 182, 143, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.animated-cta::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, #cbb68f, #3fa796, #d5d689, #cbb68f);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.animated-cta::after {
+  content: "✨";
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 1.2rem;
+  animation: sparkle 2s infinite;
+}
+
+/* Keyframes para as animações */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(203, 182, 143, 0.4),
+      0 0 20px rgba(203, 182, 143, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(203, 182, 143, 0.6),
+      0 0 30px rgba(203, 182, 143, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.02);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.2);
+  }
+}
+
 .home-button:hover {
   background: var(--cta-hover);
   border-color: var(--cta-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(63, 167, 150, 0.25);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 8px 20px rgba(63, 167, 150, 0.4);
+}
+
+.animated-cta:hover {
+  animation-play-state: paused;
+  background: linear-gradient(135deg, var(--cta-hover), #2d8a7a);
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 30px rgba(63, 167, 150, 0.6),
+    0 0 40px rgba(63, 167, 150, 0.4);
 }
 
 /* Botão secundário abaixo do CTA principal */
