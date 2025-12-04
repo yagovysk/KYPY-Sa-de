@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Kypy Saúde
+N:Saúde;Kypy;;;
+ORG:Kypy Saúde
+TITLE:Clínica Médica
+TEL;TYPE=CELL,VOICE,WA:+55 61 9365-6589
+TEL;TYPE=WORK,VOICE:+55 61 9365-6589
+EMAIL;TYPE=WORK:contato@kypysaude.com.br
+URL;TYPE=WORK:https://kypysaude.com.br/
+ADR;TYPE=WORK;LABEL="Brasília, DF":;;SQS 308 Bloco H - Asa Sul;Brasília;DF;70040-100;Brasil
+ADR;TYPE=WORK;LABEL="Barreiras, BA":;;Rua Afonso Pena, 215 - Centro;Barreiras;BA;47800-000;Brasil
+NOTE:Atendimento humanizado em Brasília-DF e Barreiras-BA.
+END:VCARD
