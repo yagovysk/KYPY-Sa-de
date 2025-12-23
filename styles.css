@@ -690,7 +690,7 @@ main {
 
 /* ========== Seção de Agendamento ========== */
 .appointment {
-  background: var(--brand-accent);
+  background: #e6c787;
   color: #242122;
   padding: 4rem 0;
 }

@@ -6,9 +6,9 @@
 
 :root {
   --brand-bg: #242122;
-  --brand-accent: #e6c787;
-  --brand-gold: #e6c787;
-  --brand-green: #e6c787;
+  --brand-accent: #8c6b1c;
+  --brand-gold: #8c6b1c;
+  --brand-green: #8c6b1c;
   --card-bg: rgba(18, 17, 17, 0.72);
   --text-primary: #f5f5f5;
   --text-secondary: rgba(245, 245, 245, 0.75);
@@ -28,17 +28,17 @@ body {
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
   background: radial-gradient(
       circle at 15% 15%,
-      rgba(230, 199, 135, 0.38),
+      rgba(140, 107, 28, 0.38),
       transparent 45%
     ),
     radial-gradient(
       circle at 85% 25%,
-      rgba(230, 199, 135, 0.22),
+      rgba(140, 107, 28, 0.22),
       transparent 55%
     ),
     radial-gradient(
       circle at 50% 80%,
-      rgba(230, 199, 135, 0.28),
+      rgba(140, 107, 28, 0.28),
       transparent 60%
     ),
     #171516;
@@ -63,7 +63,7 @@ body {
   );
   border-radius: 28px;
   padding: 2.5rem 2rem 2.75rem;
-  border: 1px solid rgba(230, 199, 135, 0.35);
+  border: 1px solid rgba(140, 107, 28, 0.35);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(var(--blur));
   position: relative;
@@ -78,7 +78,7 @@ body {
   pointer-events: none;
   background: linear-gradient(
     135deg,
-    rgba(230, 199, 135, 0.16),
+    rgba(140, 107, 28, 0.16),
     transparent 60%
   );
   z-index: -1;
@@ -94,7 +94,7 @@ body {
 .branding img {
   width: 160px;
   height: auto;
-  filter: drop-shadow(0 12px 32px rgba(230, 199, 135, 0.35));
+  filter: drop-shadow(0 12px 32px rgba(140, 107, 28, 0.35));
 }
 
 .branding h1 {
@@ -128,7 +128,7 @@ body {
     rgba(54, 50, 51, 0.88),
     rgba(28, 26, 27, 0.92)
   );
-  border: 1px solid rgba(230, 199, 135, 0.2);
+  border: 1px solid rgba(140, 107, 28, 0.2);
   position: relative;
   overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
@@ -142,8 +142,8 @@ body {
   border-radius: inherit;
   background: linear-gradient(
     135deg,
-    rgba(230, 199, 135, 0.55),
-    rgba(114, 92, 44, 0.3),
+    rgba(140, 107, 28, 0.55),
+    rgba(79, 63, 27, 0.3),
     transparent 65%
   );
   opacity: 0;
@@ -153,13 +153,55 @@ body {
 
 .link-card:hover {
   transform: translateY(-6px) scale(1.02);
-  border-color: rgba(230, 199, 135, 0.65);
-  box-shadow: 0 18px 45px rgba(230, 199, 135, 0.35),
-    0 0 32px rgba(230, 199, 135, 0.45);
+  border-color: rgba(140, 107, 28, 0.65);
+  box-shadow: 0 18px 45px rgba(140, 107, 28, 0.35),
+    0 0 32px rgba(140, 107, 28, 0.45);
 }
 
 .link-card:hover::before {
   opacity: 1;
+}
+
+.link-card.cta-primary {
+  background: #e6c787;
+  border-color: rgba(153, 117, 29, 0.55);
+  box-shadow: 0 22px 55px rgba(153, 117, 29, 0.36),
+    0 0 42px rgba(153, 117, 29, 0.45);
+  color: #2a1e0b;
+}
+
+.link-card.cta-primary::before {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 246, 210, 0.8),
+    rgba(177, 134, 30, 0.55),
+    transparent 72%
+  );
+}
+
+.link-card.cta-primary .icon-wrapper {
+  background: radial-gradient(
+    circle,
+    rgba(209, 167, 74, 0.82),
+    rgba(102, 78, 25, 0.38)
+  );
+  color: #3a290c;
+  box-shadow: inset 0 0 16px rgba(140, 107, 28, 0.38),
+    0 0 10px rgba(140, 107, 28, 0.5);
+}
+
+.link-card.cta-primary .label-stack small {
+  color: rgba(110, 82, 18, 0.78);
+}
+
+.link-card.cta-primary .typing-label {
+  color: #2a1e0b;
+}
+
+.link-card.cta-primary:hover {
+  border-color: rgba(170, 130, 33, 0.78);
+  box-shadow: 0 26px 60px rgba(170, 130, 33, 0.5),
+    0 0 48px rgba(170, 130, 33, 0.62);
 }
 
 .icon-wrapper {
@@ -170,12 +212,12 @@ body {
   place-items: center;
   background: radial-gradient(
     circle,
-    rgba(230, 199, 135, 0.65),
-    rgba(115, 90, 41, 0.25)
+    rgba(140, 107, 28, 0.65),
+    rgba(74, 58, 24, 0.25)
   );
   color: var(--brand-accent);
-  box-shadow: inset 0 0 12px rgba(230, 199, 135, 0.4),
-    0 0 8px rgba(230, 199, 135, 0.45);
+  box-shadow: inset 0 0 12px rgba(140, 107, 28, 0.4),
+    0 0 8px rgba(140, 107, 28, 0.45);
 }
 
 .icon-wrapper svg {
@@ -195,7 +237,7 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(230, 199, 135, 0.7);
+  color: rgba(140, 107, 28, 0.7);
 }
 
 .typing-label {
@@ -309,7 +351,7 @@ body {
   );
   border-radius: 24px;
   padding: 1.5rem 1.75rem;
-  border: 1px solid rgba(230, 199, 135, 0.28);
+  border: 1px solid rgba(140, 107, 28, 0.28);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   display: grid;
   gap: 1rem;
@@ -328,8 +370,8 @@ body {
   padding: 0.75rem 0.85rem;
   border-radius: 18px;
   background: rgba(24, 22, 23, 0.9);
-  border: 1px solid rgba(230, 199, 135, 0.18);
-  box-shadow: inset 0 0 18px rgba(230, 199, 135, 0.12);
+  border: 1px solid rgba(140, 107, 28, 0.18);
+  box-shadow: inset 0 0 18px rgba(140, 107, 28, 0.12);
 }
 
 .location-item strong {
